@@ -106,4 +106,39 @@
     .hero-text {
         width: 90%;
     }
+
+    .about-us {
+        margin-top: 0;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .about-us-title {
+        text-align: center;
+    }
+
+    .about-us-text {
+        flex-direction: column;
+    }
+
+    .about-us-p {
+        padding-left: 0;
+    }
+
+    .about-us-left {
+        font-size: 1.75rem;
+        line-height: 2rem;
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+
+    .about-us-right {
+        display: none;
+    }
+
+    .about-us-brands {
+        display: none;
+    }
+
 }
