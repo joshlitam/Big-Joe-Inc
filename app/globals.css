@@ -2,26 +2,108 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.dropdown {
+    display: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.bg-hero-pattern {
+    background-repeat: no-repeat;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.hero {
+    background-image: url("/img/hero-pattern.jpg");
+    animation-name: mymove;
+    animation-duration: 20s;
+    animation-delay: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    min-height: 60vh;
+}
+
+.mobile-links {
+    display: flex;
+}
+
+@keyframes mymove {
+    0% {
+        background-image: url('/img/hero-pattern.jpg');
+    }
+
+    32% {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    33% {
+        background-image: url('/img/hero-pattern-2.jpg');
+    }
+
+    65% {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    66% {
+        background-image: url('/img/hero-pattern-3.jpg');
+    }
+
+    100% {
+        background-color: rgba(0, 0, 0, 1);
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .hero {
+        width: 80%;
+    }
+
+    .hero-container {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+
+    /* For mobile phones: */
+    .mobile-links {
+        display: none;
+    }
+
+    .dropdown {
+        display: flex;
+    }
+
+    .contact-nav {
+        display: none;
+    }
+
+    .hero {
+        min-height: 50vh;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .hero {
+        min-height: 30vh;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .hero {
+        display: none;
+    }
+
+    .hero-title {
+        text-align: center;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 2px;
+    }
+    
+    .hero-text {
+        width: 90%;
+    }
 }
