@@ -4,7 +4,7 @@ import React from 'react'
 const Navbar = () => {
 
     return (
-        <div className='flex justify-center p-4 border-b-2'>
+        <div className='flex justify-center p-4 border-b-2 navbar-wrapper'>
             <div className="navbar justify-between bg-base-100 max-w-7xl">
                 <div>
                     <a className="btn btn-ghost normal-case text-xl">Big Joe Inc</a>

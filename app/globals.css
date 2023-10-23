@@ -90,8 +90,16 @@
 }
 
 @media only screen and (max-width: 740px) {
+    .navbar-wrapper {
+        padding: 0px;
+    }
+
     .hero {
         display: none;
+    }
+
+    .hero-wrapper {
+        margin-bottom: 8rem;
     }
 
     .hero-title {
@@ -111,6 +119,7 @@
         margin-top: 0;
         padding-left: 8px;
         padding-right: 8px;
+        min-height: 25vh;
     }
 
     .about-us-title {
