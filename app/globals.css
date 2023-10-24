@@ -52,9 +52,6 @@
 }
 
 @media screen and (max-width: 1400px) {
-    .hero {
-        width: 80%;
-    }
 
     .hero-container {
         display: flex;
@@ -92,10 +89,6 @@
 @media only screen and (max-width: 740px) {
     .navbar-wrapper {
         padding: 0px;
-    }
-
-    .hero {
-        display: none;
     }
 
     .hero-wrapper {
@@ -146,7 +139,7 @@
         display: none;
     }
 
-    .about-us-brands {
+    .brands {
         display: none;
     }
 
