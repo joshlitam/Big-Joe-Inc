@@ -181,16 +181,24 @@
         text-align: center;
     }
 
-    
+    .services-header {
+        margin-bottom: 2rem;
+    }
 
     .services-wrapper {
-        padding-top: 6rem;
-        padding-bottom: 6rem;
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+    }
+
+    .services-footer {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-top: 3rem;
     }
 
 }
 
-@media only screen and (max-width: 740px) {
+@media only screen and (max-width: 400px) {
 
     .brands-wrapper {
         padding-top: 1rem;
