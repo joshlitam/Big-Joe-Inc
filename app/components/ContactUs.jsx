@@ -25,6 +25,7 @@ const ContactUs = () => {
             <input type="text" placeholder='Subject' className='contact-us-input h-12 w-96 border-b-2 border-black' />
             <input type="text" placeholder='Email' className='contact-us-input h-12 w-96 border-b-2 border-black' />
             <textarea name="message" placeholder='message' id="message" cols="30" rows="10" className='border-2 border-black p-2 rounded-lg'></textarea>
+            <button className="bg-green-500 rounded-lg text-white w-36 h-12">Submit</button>
           </div>
         </div>
       </div>
