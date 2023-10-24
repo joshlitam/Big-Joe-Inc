@@ -17,7 +17,6 @@ export default function Home() {
       <Descriptions />
       <Brands />
       <Features />
-      <ContactUs />
       <Footer />
     </>
   )
