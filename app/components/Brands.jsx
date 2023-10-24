@@ -13,8 +13,8 @@ const brands = [
 
 const Brands = () => {
     return (
-        <div className="div flex justify-center">
-            <div className='brands mt-32 max-w-7xl flex flex-col'>
+        <div className="div flex min-h-screen px-12 justify-center">
+            <div className='brands mt-12 max-w-7xl flex flex-col justify-center'>
                 <h2 className='brands-header text-4xl text-center font-extrabold text-red-500'>Brands we've worked with</h2>
                 <div className="brands grid grid-cols-4 mt-16 gap-y-12">
                     {brands.map((brand) => (

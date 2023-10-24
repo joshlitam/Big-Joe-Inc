@@ -10,7 +10,8 @@ module.exports = {
       minHeight: {
         '1/2': '50vh',
         '3/4': '75vh',
-        '3/5': '60vh'
+        '3/5': '60vh',
+        '4/5': '80vh',
       },
       minWidth: {
         '1/4': '25vh',
@@ -24,6 +25,10 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      flex: {
+        '3': '3 3 0%',
+        '2': '2 2 0%',
+      }
     },
   },
   plugins: [require("daisyui")],

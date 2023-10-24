@@ -19,6 +19,8 @@
     animation-iteration-count: infinite;
     -webkit-animation-timing-function: ease-in-out;
     min-height: 60vh;
+    background-color: hsl(var(--n) / var(--tw-bg-opacity));
+    --tw-bg-opacity: 0.5;
 }
 
 .mobile-links {
@@ -63,16 +65,9 @@
 @media screen and (max-width: 1200px) {
 
     /* For mobile phones: */
-    .mobile-links {
-        display: none;
-    }
 
     .dropdown {
         display: flex;
-    }
-
-    .contact-nav {
-        display: none;
     }
 
     .hero {
@@ -89,10 +84,6 @@
 @media only screen and (max-width: 740px) {
     .navbar-wrapper {
         padding: 0px;
-    }
-
-    .hero-wrapper {
-        margin-bottom: 8rem;
     }
 
     .hero-title {
@@ -112,11 +103,14 @@
         margin-top: 0;
         padding-left: 8px;
         padding-right: 8px;
+        padding-top: 4rem;
         min-height: 25vh;
     }
 
     .about-us-title {
         text-align: center;
+        font-size: 3rem;
+        padding-bottom: 2rem;
     }
 
     .about-us-text {
@@ -139,8 +133,36 @@
         display: none;
     }
 
-    .brands {
-        display: none;
+    .descriptions-wrapper {
+        padding-top: 1rem;
+    }
+
+    .description-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .description-item {
+        gap: 5rem;
+    }
+
+    .description-left, .description-right {
+        justify-content: center;
+    }
+
+    .description-p {
+        text-align: center;
+    }
+
+    .brands-header {
+        font-size: 4rem;
+        line-height: 4.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .services-wrapper {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
     }
 
 }

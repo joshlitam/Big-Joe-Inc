@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { useState } from 'react'
+import Navbar from './Navbar'
 
 const Hero = () => {
     const [useBackground, setBackground] = useState(0)
@@ -9,7 +10,7 @@ const Hero = () => {
         <div className='flex justify-center hero-wrapper'>
             <div className="hero h-screen">
                 <div className="hero-overlay bg-opacity-60"></div>
-                <div className="hero-content text-center text-neutral-content flex flex-col gap-12">
+                <div className="hero-content text-center text-neutral-content flex flex-col gap-12 w-full">
                     <div className="max-w-xl">
                         <div className='flex flex-col items-center'>
                             <h1 className="text-7xl font-bold hero-title">Events? We Got <span className='text-red-700 font-black'>YOU!</span></h1>
@@ -17,7 +18,7 @@ const Hero = () => {
                         </div>
                     </div>
                     <div className="flex gap-6 justify-center hero-buttons">
-                        <button className="btn bg-red-600 text-white">Send an Inquiry!</button>
+                        <a href="#services"><button className="btn bg-red-600 text-white">Send an Inquiry!</button></a>
                         <button className="btn bg-green-600 text-white">See our Portfolio</button>
                     </div>
                 </div>

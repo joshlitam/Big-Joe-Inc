@@ -1,9 +1,23 @@
 import React from 'react'
+import Card from './Card'
+
+let cards = [
+  {"title": "EVENT ACTIVATIONS", "imgURL": "img/event-activation.png", "description": "From planning to logistics, all the way to event manpower, Big Joe Inc has got you covered"},
+  {"title": "MERCHANDISE", "imgURL": "img/merchandise.png", "description": "Need some giveaways or prizes? Big Joe Inc sources the best materials to ensure the highest of quality merchandise, at the lowest of costs."},
+  {"title": "ESPORTS AND BROADCAST", "imgURL": "img/headset.png", "description": "Looking to host your next Esports tournament? Big Joe Inc has a complete broadcasting and league operations team to ensure the quality and integrity of your event!"},
+]
 
 const AboutUs = () => {
   return (
-    <div className="services min-h-3/4 min-w-full h-full flex justify-center items-center border-black border-2">
-        Services
+    <div id="services" className="services-wrapper min-h-screen px-12 min-w-full flex justify-center items-center bg-gray-200">
+      <div className="services-container max-w-7xl flex flex-col justify-start w-full">
+        <h2 className='mb-24 text-2xl font-bold about-us-title text-red-500'>Services</h2>
+        <div className="services-cards flex flex-wrap justify-around gap-8">
+          {cards.map((card) => (
+            <Card key={card.title} title={card.title} imgURL={card.imgURL} description={card.description} />
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
