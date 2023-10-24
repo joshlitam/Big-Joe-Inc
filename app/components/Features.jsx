@@ -12,7 +12,7 @@ const AboutUs = () => {
     <div id="services" className="services-wrapper min-h-screen px-12 min-w-full flex justify-center items-center bg-gray-200">
       <div className="services-container min-h-screen max-w-7xl flex flex-col justify-around w-full">
           <h2 className='services-header text-2xl font-bold about-us-title text-red-500'>Services</h2>
-        <div className="services-cards flex flex-wrap justify-around gap-8">
+        <div className="services-cards flex justify-around gap-8">
           {cards.map((card) => (
             <Card key={card.title} title={card.title} imgURL={card.imgURL} description={card.description} />
           ))}
