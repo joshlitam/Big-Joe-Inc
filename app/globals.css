@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+}
+
 .dropdown {
     display: none;
 }
@@ -19,6 +23,8 @@
     animation-iteration-count: infinite;
     -webkit-animation-timing-function: ease-in-out;
     min-height: 60vh;
+    background-color: hsl(var(--n) / var(--tw-bg-opacity));
+    --tw-bg-opacity: 0.5;
 }
 
 .mobile-links {
@@ -52,9 +58,6 @@
 }
 
 @media screen and (max-width: 1400px) {
-    .hero {
-        width: 80%;
-    }
 
     .hero-container {
         display: flex;
@@ -66,16 +69,9 @@
 @media screen and (max-width: 1200px) {
 
     /* For mobile phones: */
-    .mobile-links {
-        display: none;
-    }
 
     .dropdown {
         display: flex;
-    }
-
-    .contact-nav {
-        display: none;
     }
 
     .hero {
@@ -83,9 +79,44 @@
     }
 }
 
+
 @media only screen and (max-width: 900px) {
     .hero {
         min-height: 30vh;
+    }
+
+    .brands-cards-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .services-container {
+        gap: 4rem;
+    }
+
+    .services-wrapper {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    .services-cards {
+        flex-wrap: wrap;
+    }
+
+    .contact-us-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .contact-us-left-header {
+        text-align: center;
+    }
+
+    .contact-us-left {
+        align-items: center;
+    }
+
+    .contact-us-right {
+        gap: 4rem;
     }
 }
 
@@ -94,12 +125,8 @@
         padding: 0px;
     }
 
-    .hero {
+    .contact-nav {
         display: none;
-    }
-
-    .hero-wrapper {
-        margin-bottom: 8rem;
     }
 
     .hero-title {
@@ -108,7 +135,7 @@
 
     .hero-buttons {
         flex-direction: column;
-        gap: 2px;
+        gap: 4px;
     }
     
     .hero-text {
@@ -117,13 +144,16 @@
 
     .about-us {
         margin-top: 0;
-        padding-left: 8px;
-        padding-right: 8px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 4rem;
         min-height: 25vh;
     }
 
     .about-us-title {
         text-align: center;
+        font-size: 3rem;
+        padding-bottom: 2rem;
     }
 
     .about-us-text {
@@ -146,8 +176,110 @@
         display: none;
     }
 
-    .about-us-brands {
-        display: none;
+    .brands-wrapper {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
+    .brands-header {
+        font-size: 3.5rem;
+        line-height: 4.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .brands-cards-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .descriptions-wrapper {
+        padding-top: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .description-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .description-item {
+        gap: 5rem;
+    }
+
+    .description-left, .description-right {
+        justify-content: center;
+    }
+
+    .description-p {
+        text-align: center;
+    }
+
+    .services-header {
+        margin-bottom: 2rem;
+    }
+
+    .services-wrapper {
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+    }
+
+    .services-footer {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-top: 3rem;
+    }
+
+    .contact-us-wrapper {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border: none;
+    }
+
+    .contact-us-info-container {
+        font-size: 1rem;
+    }
+
+    .contact-us-left-header {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .contact-us-right {
+        padding-left: 1rem;
+        gap: 2rem;
+    }
+
+    .contact-us-input {
+        width: 16rem;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+
+    .brands-wrapper {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .brands {
+        margin-top: 1rem
+    }
+
+    .brands-header {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .card-wrapper {
+        height: auto;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }

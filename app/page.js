@@ -5,16 +5,21 @@ import AboutUs from './components/AboutUs'
 import Features from './components/Features'
 import ContactUs from './components/ContactUs'
 import Footer from './components/Footer'
+import Brands from './components/Brands'
+import Descriptions from './components/Descriptions'
+import RootLayout from './layout'
 
 export default function Home() {
   return (
-    <>
+    <RootLayout>
       <Navbar />
       <Hero />
       <AboutUs />
+      <Descriptions />
+      <Brands />
       <Features />
       <ContactUs />
       <Footer />
-    </>
+    </RootLayout>
   )
 }
