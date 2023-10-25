@@ -7,10 +7,11 @@ import ContactUs from './components/ContactUs'
 import Footer from './components/Footer'
 import Brands from './components/Brands'
 import Descriptions from './components/Descriptions'
+import RootLayout from './layout'
 
 export default function Home() {
   return (
-    <>
+    <RootLayout>
       <Navbar />
       <Hero />
       <AboutUs />
@@ -19,6 +20,6 @@ export default function Home() {
       <Features />
       <ContactUs />
       <Footer />
-    </>
+    </RootLayout>
   )
 }

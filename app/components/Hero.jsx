@@ -18,8 +18,8 @@ const Hero = () => {
                         </div>
                     </div>
                     <div className="flex gap-6 justify-center hero-buttons">
-                        <a href="#services"><button className="btn bg-red-600 text-white">Send an Inquiry!</button></a>
-                        <button className="btn bg-green-600 text-white">See our Portfolio</button>
+                        <a href="#contact-us"><button className="btn w-48 bg-red-600 text-white">Send an Inquiry!</button></a>
+                        <a href="https://www.facebook.com/bigjoeinc/photos" target='_blank'><button className="btn w-48 bg-green-600 text-white">See our Portfolio</button></a>
                     </div>
                 </div>
 

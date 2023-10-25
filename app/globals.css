@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+}
+
 .dropdown {
     display: none;
 }
@@ -131,7 +135,7 @@
 
     .hero-buttons {
         flex-direction: column;
-        gap: 2px;
+        gap: 4px;
     }
     
     .hero-text {
