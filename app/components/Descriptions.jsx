@@ -1,4 +1,6 @@
+'use client'
 import React from 'react'
+import CountUp from 'react-countup'
 
 const Descriptions = () => {
   return (
@@ -20,7 +22,7 @@ const Descriptions = () => {
           <div className="description-content flex justify-around w-full">
             <div className="div description-left flex flex-1 justify-center items-center">
               <div className="div description-box min-w-36 w-36 h-36 bg-red-500 border-red border-2 rounded-xl flex justify-center items-center text-white text-5xl">
-                <p>10+</p>
+                <p><CountUp start={0} end={10} />+</p>
               </div>
             </div>
             <div className="div description-right flex flex-2 justify-start items-center">
@@ -32,7 +34,7 @@ const Descriptions = () => {
           <div className="description-content flex justify-around w-full">
             <div className="div description-left flex flex-1 justify-center items-center">
               <div className="div description-box min-w-36 w-36 h-36 bg-red-500 border-red border-2 rounded-xl flex justify-center items-center text-white text-5xl">
-                <p>20+</p>
+                <p><CountUp start={0} end={20} />+</p>
               </div>
             </div>
             <div className="div description-right flex flex-2 justify-start items-center">
