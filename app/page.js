@@ -8,12 +8,12 @@ import Footer from './components/Footer'
 import Brands from './components/Brands'
 import Descriptions from './components/Descriptions'
 import RootLayout from './layout'
+import Carousel from './components/Carousel'
 
 export default function Home() {
   return (
     <RootLayout>
-      <Navbar />
-      <Hero />
+      <Carousel />
       <AboutUs />
       <Descriptions />
       <Brands />

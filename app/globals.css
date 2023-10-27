@@ -85,6 +85,12 @@ html {
         min-height: 30vh;
     }
 
+    .carousel-text {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        text-align: center;
+    }
+
     .brands-cards-container {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }

@@ -4,8 +4,8 @@ import React from 'react'
 const Navbar = () => {
 
     return (
-        <div className='w-full flex justify-center navbar-wrapper absolute p-4 text-white'>
-            <div className="navbar justify-between">
+        <div className='w-full flex justify-center navbar-wrapper absolute p-4 z-10 text-white'>
+            <div className="navbar justify-between max-w-7xl">
                 <div>
                     <a href="/" className="btn btn-ghost normal-case text-xl">Big Joe Inc</a>
                 </div>
