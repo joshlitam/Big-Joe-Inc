@@ -43,7 +43,7 @@ const Typer = ({ text }) => {
         }
     }
     return (
-        <motion.div ref={ref} variants={container} style={{ textAlign: "center" }} initial="hidden" animate={mainControls}>
+        <motion.div ref={ref} variants={container} style={{ textAlign: "center", width: "100%" }} initial="hidden" animate={mainControls}>
             {words.map((word, index) => (
                 <motion.span variants={child} style={{ marginRight: "5px" }} key={index}>
                     {word}
