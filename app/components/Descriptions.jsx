@@ -1,6 +1,8 @@
 'use client'
 import React from 'react'
 import CountUp from 'react-countup'
+import Reveal from './Reveal'
+import Typer from './Typer'
 
 const Descriptions = () => {
   return (
@@ -15,7 +17,8 @@ const Descriptions = () => {
             </div>
             <div className="div description-right flex flex-2 justify-start items-center">
               <div className="description-text flex justify-center items-center text-xl font-bold text-right text-gray-500">
-                <p className='description-p'>The number 1 end-to-end service provider for all event needs</p>
+                <Typer text="The number 1 end-to-end service provider for all event needs"></Typer>
+
               </div>
             </div>
           </div>
@@ -27,7 +30,7 @@ const Descriptions = () => {
             </div>
             <div className="div description-right flex flex-2 justify-start items-center">
               <div className="description-text flex justify-center items-center text-xl font-bold text-right text-gray-500">
-                <p className='description-p'>Years in the events industry</p>
+                <Typer text="Years in the events industry"/>
               </div>
             </div>
           </div>
@@ -39,7 +42,7 @@ const Descriptions = () => {
             </div>
             <div className="div description-right flex flex-2 justify-start items-center">
               <div className="description-text flex justify-center items-center text-xl font-bold text-right text-gray-500">
-                <p className='description-p'>Partners and brands satisfied</p>
+                <Typer text="Partners and brands satisfied"></Typer>
               </div>
             </div>
           </div>

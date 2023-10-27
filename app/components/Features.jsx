@@ -1,5 +1,8 @@
+'use client'
 import React from 'react'
 import Card from './Card'
+import TransitionLeft from './TransitionLeft'
+import Reveal from './Reveal'
 
 let cards = [
   { "title": "EVENT ACTIVATIONS", "imgURL": "img/event-activation.png", "description": "From planning to logistics, all the way to event manpower, Big Joe Inc has got you covered" },
@@ -11,13 +14,20 @@ const AboutUs = () => {
   return (
     <div id="services" className="services-wrapper min-h-screen px-12 min-w-full flex justify-center items-center bg-gray-200">
       <div className="services-container min-h-screen max-w-7xl flex flex-col justify-around w-full">
-          <h2 className='services-header text-2xl font-bold about-us-title text-red-500'>Services</h2>
+        <h2 className='services-header text-2xl font-bold about-us-title text-red-500'>Services</h2>
         <div className="services-cards flex justify-around gap-8">
           {cards.map((card) => (
-            <Card key={card.title} title={card.title} imgURL={card.imgURL} description={card.description} />
+            <TransitionLeft>
+              <Card key={card.title} title={card.title} imgURL={card.imgURL} description={card.description} />
+            </TransitionLeft>
           ))}
         </div>
-        <h3 className='services-footer text-5xl text-center font-black'>Big Joe Inc has a wide suite of services dedicated to provide the best event and customer experience. </h3>
+        <Reveal>
+          <div className='services-footer text-5xl text-center font-black'>
+            Big Joe Inc has a wide suite of services dedicated to provide the best event and customer experience.
+          </div>
+        </Reveal>
+
       </div>
     </div>
   )
