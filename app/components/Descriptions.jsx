@@ -16,7 +16,7 @@ const Descriptions = () => {
               </div>
             </div>
             <div className="div description-right flex flex-2 justify-start items-center">
-              <div className="description-text flex justify-center items-center text-xl font-bold text-right text-gray-500">
+              <div className="description-text flex justify-center items-center text-xl font-bold text-right text-gray-500 w-full">
                 <Typer text="The number 1 end-to-end service provider for all event needs"></Typer>
 
               </div>
@@ -29,7 +29,7 @@ const Descriptions = () => {
               </div>
             </div>
             <div className="div description-right flex flex-2 justify-start items-center">
-              <div className="description-text flex justify-center items-center text-xl font-bold text-right text-gray-500">
+              <div className="description-text flex justify-center items-center text-xl font-bold text-right text-gray-500 w-full">
                 <Typer text="Years in the events industry"/>
               </div>
             </div>
@@ -41,7 +41,7 @@ const Descriptions = () => {
               </div>
             </div>
             <div className="div description-right flex flex-2 justify-start items-center">
-              <div className="description-text flex justify-center items-center text-xl font-bold text-right text-gray-500">
+              <div className="description-text flex justify-center items-center text-xl font-bold text-right text-gray-500 w-full">
                 <Typer text="Partners and brands satisfied"></Typer>
               </div>
             </div>
