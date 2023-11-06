@@ -10,6 +10,7 @@ import Descriptions from '../components/Descriptions'
 import RootLayout from '../layout'
 import Carousel from '../components/Carousel'
 import Portfolio from '../components/portfolio/Portfolio'
+import PreviewSection from '../components/portfolio/PreviewSection'
 
 export default function Home() {
   return (

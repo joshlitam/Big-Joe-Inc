@@ -5,13 +5,22 @@ import Image from 'next/image'
 import Navbar from '../Navbar'
 import Reveal from '../Reveal'
 
-const Carousel = () => {
+const Hero = () => {
+  const [page, setPage] = useState(1)
+
+  useEffect(() => {
+    let int = setInterval(() => {
+      setPage(prev => ((prev + 1) >= 4 ? 1 : prev + 1));
+    }, 5000)
+
+    return () => clearInterval(int)
+  }, [])
 
   return (
     <div className='relative flex h-screen w-screen flex-col justify-center items-center'>
       <div className="absolute w-full h-full">
         <Navbar />
-        <div className="w-full h-full bg-center bg-cover" style={{ backgroundImage: `url(/img/hero-pattern-1.jpg)` }}></div>
+        <div className="w-full h-full bg-center bg-cover duration-700 ease-in-out" style={{ backgroundImage: `url(/img/hero-pattern-${page}.jpg)` }}></div>
         {/* Gray shade on images */}
         <div className='absolute top-0 w-full h-full flex flex-col items-center justify-center py-4 px-8 rounded-lg bg-gray-700 opacity-60'></div>
         <div className="absolute top-0 w-full h-full flex flex-col justify-center items-center">
@@ -27,4 +36,4 @@ const Carousel = () => {
   )
 }
 
-export default Carousel
+export default Hero
