@@ -13,7 +13,7 @@ const Navbar = () => {
                     <div className="contact-nav"><a href="#contact-us">Contact Us</a></div>
                     <div>
                         <ul className='flex gap-3 mobile-links'>
-                            <li><a href="https://www.facebook.com/bigjoeinc/photos" target='_blank'>Portfolio</a></li>
+                            <li><a href="/portfolio">Portfolio</a></li>
                             <li><a href="#about-us">About</a></li>
                         </ul>
                     </div>
