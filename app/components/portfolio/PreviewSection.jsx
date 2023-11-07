@@ -9,9 +9,10 @@ const PreviewSection = () => {
             <h2 className='text-4xl text-red-500 mb-24'>Event Portfolio</h2>
             <div className="pc-container w-full h-full max-w-7xl flex justify-around flex-wrap">
                 {items.map((item) => (
-                    <PreviewCard imageURL={item.imageURL} eventName={item.eventName}/>
+                    <a href={`portfolio/events/?search=` + item.id}><PreviewCard imageURL={item.imageURL} eventName={item.eventName} /></a>
                 ))}
             </div>
+            <a href="/"><button className='mt-24 px-6 py-4 bg-green-500 rounded-lg text-white'>Back to home</button></a>
         </div>
     )
 }
