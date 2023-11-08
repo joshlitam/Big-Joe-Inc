@@ -14,6 +14,8 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="shortcut icon" href="/images/icon.png" sizes="any" />
         <meta name="color scheme" content="only light"/>
+        <meta property="og:image" content="/img/hero-pattern-1.jpg"/>
+        <meta property="og:description" content="Big Joe Company Website"/>
       </head>
       <body className={inter.className}>
         {children}
