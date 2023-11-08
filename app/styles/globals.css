@@ -327,3 +327,9 @@ html {
         justify-content: center;
     }
 }
+
+@media only screen and (max-height: 800px) {
+    .et-wrapper {
+        height: 120vh;
+    }
+}

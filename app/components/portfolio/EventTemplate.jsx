@@ -25,7 +25,7 @@ const EventTemplate = () => {
   }
 
   return (
-    <div className='w-screen h-screen flex justify-center items-center'>
+    <div className='et-wrapper w-screen h-screen flex justify-center items-center'>
       <div className="et-container flex justify-center item-center max-w-7xl px-6">
         <div className="et-image-container w-full event-container flex flex-col gap-4">
 

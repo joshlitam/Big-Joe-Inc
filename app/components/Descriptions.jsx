@@ -17,7 +17,7 @@ const Descriptions = () => {
             </div>
             <div className="div description-right flex flex-2 justify-start items-center">
               <div className="description-text flex justify-center items-center text-xl font-bold text-right text-gray-500 w-full">
-                <Typer text="The number 1 end-to-end service provider for all event needs"></Typer>
+                <Typer text="The no. 1 end-to-end service provider for all event needs"></Typer>
 
               </div>
             </div>
