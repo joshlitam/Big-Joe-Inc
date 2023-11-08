@@ -7,7 +7,7 @@ import PreviewSection from './PreviewSection'
 
 const Portfolio = () => {
     return (
-        <div className='bg-blue-500 h-screen'>
+        <div className='bh-screen'>
             <Hero />
             <PreviewSection />
             <Footer />

@@ -22,7 +22,7 @@ const Brands = () => {
                 <h2 className='brands-header text-4xl text-center font-extrabold text-red-500'>Brands we've worked with</h2>
                 <div className="brands-cards-container grid grid-cols-4 mt-16 gap-y-12">
                     {brands.map((brand) => (
-                        <BrandCard imgURL={brand.imgUrl} alt={brand.alt}/>
+                        <BrandCard imgURL={brand.imgUrl} alt={brand.alt} key={brand.alt}/>
                     ))}
                 </div>
                 </Reveal>

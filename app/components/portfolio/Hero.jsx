@@ -8,6 +8,7 @@ import items from '@/app/data'
 
 const Hero = () => {
   const [page, setPage] = useState(1)
+  const [hasLoaded, setHasLoaded] = useState(false)
 
   useEffect(() => {
     let int = setInterval(() => {
@@ -17,13 +18,19 @@ const Hero = () => {
     return () => clearInterval(int)
   }, [])
 
+  const doFadeIn = () => {
+    setHasLoaded(true)
+  }
+
   return (
     <div className='relative flex h-screen w-full flex-col justify-center items-center'>
       <div className="absolute w-full h-full">
         <Navbar />
-        {items.map((item) => (
-          <Image src={items[page - 1].imageURL} fill objectFit='cover'/>
-        ))}
+        <div className="w-full overflow-hidden flex absolute h-full">
+          {items.map((item) => (
+            <Image src={items[page - 1].imageURL} fill style={{'objectFit': 'cover'}} key={item.eventName} id={item.eventName} alt={item.eventName} priority/>
+          ))}
+        </div>
         {/* Gray shade on images */}
         <div className='absolute top-0 w-full h-full flex flex-col items-center justify-center py-4 px-8 rounded-lg bg-gray-700 opacity-60'></div>
         <div className="absolute top-0 w-full h-full flex flex-col justify-center items-center">
