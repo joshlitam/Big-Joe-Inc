@@ -6,6 +6,7 @@ import Navbar from './Navbar'
 import Reveal from './Reveal'
 import items from '../data'
 
+
 const Carousel = () => {
   const [page, setPage] = useState(1)
 
@@ -22,7 +23,7 @@ const Carousel = () => {
       <div className="absolute w-full h-full">
         <Navbar />
         {items.map((item) => (
-          <Image src={items[page - 1].imageURL} fill style={{"objectFit": "cover"}} key={item.eventName} alt={item.eventName}/>
+          <Image src={items[page - 1].imageURL} fill style={{"objectFit": "cover"}} key={item.eventName} alt={item.eventName} />
         ))}
         {/* Gray shade on images */}
         <div className='absolute top-0 w-full h-full flex flex-col items-center justify-center py-4 px-8 rounded-lg bg-gray-700 opacity-60'></div>
@@ -37,6 +38,8 @@ const Carousel = () => {
       </div>
     </div>
   )
+
+  
 }
 
 export default Carousel
