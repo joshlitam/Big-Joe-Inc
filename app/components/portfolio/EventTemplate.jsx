@@ -29,11 +29,11 @@ const EventTemplate = () => {
       <div className="et-container flex justify-center item-center max-w-7xl px-6">
         <div className="et-image-container w-full event-container flex flex-col gap-4">
 
-          <Image src={imageSet[page - 1]} width={800} height={700} alt={imageSet[page - 1].eventName} className='border-4 border-grey rounded-lg duration-700 ease-in-out' loading='eager' />
+          <Image src={imageSet[page - 1]} width={800} height={700} alt={imageSet[page - 1].eventName} className='border-4 border-grey rounded-lg duration-700 ease-in-out' loading='eager' priority={true} />
           <div className="flex justify-center items-center gap-8">
             <button onClick={setPrev}><Image src={"/img/left.png"} width={40} height={40} /></button>
             {imageSet.map((image, i) => (
-              <Image src={(i == page - 1) ? "/img/circle.png" : "/img/oval.png"} width={20} height={20} className={i} loading='eager' />
+              <Image src={(i == page - 1) ? "/img/circle.png" : "/img/oval.png"} width={20} height={20} className={i} loading='eager' priority={true} />
             ))}
             <button onClick={setNext}><Image src={"/img/right.png"} width={40} height={40} /></button>
           </div>
