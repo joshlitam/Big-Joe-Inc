@@ -14,7 +14,6 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="shortcut icon" href="/images/icon.png" sizes="any" />
         <meta name="color scheme" content="only light"/>
-        <script type='text/javascript'>localStorage.theme = "light"</script>
       </head>
       <body className={inter.className}>
         {children}
