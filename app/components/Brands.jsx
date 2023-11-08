@@ -16,7 +16,7 @@ const brands = [
 
 const Brands = () => {
     return (
-        <div className="brands-wrapper div flex min-h-screen px-12 justify-center">
+        <div className="brands-wrapper div flex min-h-screen px-12 justify-center bg-white">
             <div className='brands mt-12 max-w-7xl flex flex-col justify-center'>
                 <Reveal>
                 <h2 className='brands-header text-4xl text-center font-extrabold text-red-500'>Brands we've worked with</h2>

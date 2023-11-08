@@ -21,7 +21,7 @@ const ContactUs = () => {
 
 
   return (
-    <div id="contact-us" className='contact-us-wrapper py-24 px-12 min-w-full flex justify-center items-center border-l-8 border-green-600'>
+    <div id="contact-us" className='contact-us-wrapper py-24 px-12 min-w-full flex justify-center items-center border-l-8 border-green-600 bg-white'>
       <div className="contact-us-container min-h-3/5 flex max-w-7xl">
         <div className="contact-us-left flex flex-col gap-16 flex-1">
           <h2 className='contact-us-left-header text-7xl font-extrabold text-green-600'>Let's discuss your event!</h2>

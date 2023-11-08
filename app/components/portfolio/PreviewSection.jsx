@@ -5,7 +5,7 @@ import items from '@/app/data'
 
 const PreviewSection = () => {
     return (
-        <div className='ps w-screen flex flex-col justify-center items-center pt-24 pb-24'>
+        <div className='ps w-screen flex flex-col justify-center items-center pt-24 pb-24 bg-white'>
             <h2 className='text-4xl text-red-500 mb-16'>Event Portfolio</h2>
             <div className="pc-container w-full h-full max-w-7xl flex justify-around flex-wrap">
                 {items.map((item) => (
