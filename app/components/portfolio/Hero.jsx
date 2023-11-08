@@ -17,7 +17,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <div className='relative flex h-screen w-screen flex-col justify-center items-center'>
+    <div className='relative flex h-screen w-full flex-col justify-center items-center'>
       <div className="absolute w-full h-full">
         <Navbar />
         <div className="w-full h-full bg-center bg-cover duration-700 ease-in-out" style={{ backgroundImage: `url(/img/hero-pattern-${page}.jpg)` }}></div>
