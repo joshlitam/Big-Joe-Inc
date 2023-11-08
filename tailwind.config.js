@@ -1,8 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  daisyui: {
+    themes: []
+  },
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './Components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
@@ -28,6 +32,9 @@ module.exports = {
       flex: {
         '3': '3 3 0%',
         '2': '2 2 0%',
+      },
+      height: {
+        '2/3': '66vh'
       }
     },
   },

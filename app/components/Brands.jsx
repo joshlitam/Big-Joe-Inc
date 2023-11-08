@@ -1,5 +1,7 @@
+'use client'
 import React from 'react'
 import BrandCard from './BrandCard'
+import Reveal from './Reveal'
 
 const brands = [
     { "imgUrl": "/img/gatorade.png", "alt": "gatorade logo" },
@@ -14,14 +16,16 @@ const brands = [
 
 const Brands = () => {
     return (
-        <div className="brands-wrapper div flex min-h-screen px-12 justify-center">
+        <div className="brands-wrapper div flex min-h-screen px-12 justify-center bg-white">
             <div className='brands mt-12 max-w-7xl flex flex-col justify-center'>
+                <Reveal>
                 <h2 className='brands-header text-4xl text-center font-extrabold text-red-500'>Brands we've worked with</h2>
                 <div className="brands-cards-container grid grid-cols-4 mt-16 gap-y-12">
                     {brands.map((brand) => (
                         <BrandCard imgURL={brand.imgUrl} alt={brand.alt}/>
                     ))}
                 </div>
+                </Reveal>
             </div>
         </div>
 

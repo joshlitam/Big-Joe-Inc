@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    color-scheme: only light;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -29,6 +33,10 @@ html {
 
 .mobile-links {
     display: flex;
+}
+
+.selected {
+    border: 2px solid green;
 }
 
 @keyframes mymove {
@@ -77,6 +85,14 @@ html {
     .hero {
         min-height: 50vh;
     }
+
+    .et-container {
+        gap: 24px;
+    }
+
+    .et-image-container {
+        align-items: center;
+    }
 }
 
 
@@ -123,6 +139,14 @@ html {
 
     .contact-us-right {
         gap: 4rem;
+    }
+
+    .pc-container {
+        gap: 36px
+    }
+
+    .et-container {
+        flex-direction: column;
     }
 }
 
@@ -261,6 +285,27 @@ html {
         width: 16rem;
     }
 
+    .et-container {
+        gap: 64px;
+    }
+
+    .et-text {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .et-text-title {
+        font-size: 1.75rem;
+    }
+
+    .et-text-description {
+        font-size: 1.15rem;
+    }
+
+    .et-text-tags {
+        font-size: 1.15rem;
+    }
+
 }
 
 @media only screen and (max-width: 400px) {
@@ -287,5 +332,11 @@ html {
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+}
+
+@media only screen and (max-height: 800px) {
+    .et-wrapper {
+        height: 120vh;
     }
 }
