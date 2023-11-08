@@ -87,7 +87,6 @@ html {
     }
 
     .et-container {
-        flex-direction: column;
         gap: 24px;
     }
 
@@ -144,6 +143,10 @@ html {
 
     .pc-container {
         gap: 36px
+    }
+
+    .et-container {
+        flex-direction: column;
     }
 }
 
