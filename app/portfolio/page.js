@@ -1,21 +1,25 @@
-import Image from 'next/image'
-import Navbar from '../components/Navbar'
-import Hero from '../components/Hero'
-import AboutUs from '../components/AboutUs'
-import Features from '../components/Features'
-import ContactUs from '../components/ContactUs'
-import Footer from '../components/Footer'
-import Brands from '../components/Brands'
-import Descriptions from '../components/Descriptions'
-import RootLayout from '../layout'
-import Carousel from '../components/Carousel'
-import Portfolio from '../components/portfolio/Portfolio'
 import PreviewSection from '../components/portfolio/PreviewSection'
 
-export default function Home() {
+const getEvents = async () => {
+  try {
+    const res = await fetch('http://localhost:3000/api/events', {
+      cache: 'no-store',
+    })
+
+    if (!res.ok) {
+      throw new Error('Failed to fetch events');
+    }
+
+    return res.json();
+  } catch (error) {
+    console.log("Error loading events", error);
+  }
+}
+
+export default async function Home() {
+  const { events } = await getEvents();
+
   return (
-    <RootLayout>
-      <Portfolio />
-    </RootLayout>
+    <PreviewSection events={events} />
   )
 }

@@ -18,10 +18,9 @@ const page = () => {
 
     return (
         <div>
-            <Carousel />
             <div className="flex justify-center items-center py-8">
                 <div className='h-screen w-screen flex flex-col justify-center items-center gap-8 max-w-7xl'>
-                    <form action="" method='POST' className='flex flex-col justify-center items-start gap-8 w-full h-full'>
+                    <form action="http://localhost:3000/api/events" method="POST" className='flex flex-col justify-center items-start gap-8 w-full h-full'>
                         <div className='flex flex-col justify-center items-center gap-2 w-full'>
                             <h2 className='text-5xl font-bold text-gray-500 mb-8'>Event Uploader</h2>
                             <label htmlFor="eventName">Event Name</label>
@@ -41,7 +40,7 @@ const page = () => {
                         </div>
                         <div className="flex flex-col justify-center items-center gap-2 w-full">
                             <label htmlFor="image">Event Image</label>
-                            {imageId && <CldImage src={imageId} width={200} height={200}/>}
+                            {imageId && <CldImage src={imageId} width={200} height={200} />}
                             <CldUploadButton
                                 onUpload={(result) => {
                                     setImageId(result.info.public_id)
@@ -105,12 +104,13 @@ const page = () => {
                                 value={tag}
                                 onChange={e => setTag(e.target.value)}
                             />
-                            <button className='py-2 px-4 rounded-lg bg-gray-500 text-white' onClick={() => {
+                            <button className='py-2 px-4 rounded-lg bg-gray-500 text-white' onClick={(e) => {
+                                e.preventDefault()
                                 setTags([...tags, tag])
                                 setTag("")
                             }}>Add Tag</button>
                         </div>
-                        <button className='bg-green-500 text-white rounded-lg py-4 px-8 mx-auto' >Submit</button>
+                        <button type="submit" className='bg-green-500 text-white rounded-lg py-4 px-8 mx-auto' >Submit</button>
                     </form>
                 </div>
             </div>
