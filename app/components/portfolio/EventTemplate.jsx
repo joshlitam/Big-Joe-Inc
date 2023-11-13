@@ -4,6 +4,7 @@ import React from 'react'
 import items from '@/app/data'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 
 const EventTemplate = () => {
   const pathname = usePathname()
@@ -44,7 +45,7 @@ const EventTemplate = () => {
             <h1 className='et-text-title text-5xl text-black font-bold'><span className='text-red-500'>{event[0].eventName}</span></h1>
             <h2 className='et-text-description text-2xl text-gray-500 font-bold'>{event[0].eventDescription}</h2>
             <h2 className='et-text-tags text-xl text-left'>Tags: {event[0].services.join(", ")}</h2>
-            <a href="/portfolio"><button className='px-6 py-4 bg-green-500 rounded-lg text-white'>Back to portfolio</button></a>
+            <Link href="/portfolio"><button className='px-6 py-4 bg-green-500 rounded-lg text-white'>Back to portfolio</button></Link>
           </div>
 
         </div>

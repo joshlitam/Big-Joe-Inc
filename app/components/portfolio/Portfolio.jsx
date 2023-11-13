@@ -3,12 +3,13 @@ import Hero from './Hero'
 import Feature from './Feature'
 import Footer from '../Footer'
 import PreviewSection from './PreviewSection'
+import Carousel from '../Carousel'
 
 
 const Portfolio = () => {
     return (
         <div className='bh-screen'>
-            <Hero />
+            <Carousel />
             <PreviewSection />
             <Footer />
         </div>

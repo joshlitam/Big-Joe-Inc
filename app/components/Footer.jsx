@@ -11,9 +11,6 @@ const Footer = () => {
                     <li>
                         <a href="https://www.facebook.com/bigjoeinc" target="_blank" className="mr-4 hover:underline md:mr-6 ">Facebook</a>
                     </li>
-                    <li>
-                        <a href="#" className="mr-4 hover:underline md:mr-6">Instagram</a>
-                    </li>
                 </ul>
             </div>
         </footer>

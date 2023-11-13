@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google'
 import './styles/globals.css'
+import Carousel from './components/Carousel'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,7 +14,6 @@ export default function RootLayout({ children }) {
     <html lang="en" data-theme="light">
       <head>
         <link rel="shortcut icon" href="/images/icon.png" sizes="any" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta name="color scheme" content="only light"/>
         <meta property="og:image" content="/img/hero-pattern-1.jpg"/>
         <meta property="og:description" content="Big Joe Company Website"/>
