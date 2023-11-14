@@ -1,10 +1,8 @@
 'use client'
 import React from 'react'
-import Carousel from '../components/Carousel'
 import { CldImage, CldUploadButton } from 'next-cloudinary';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
 
 const page = () => {
 
@@ -51,7 +49,7 @@ const page = () => {
         <div>
             <div className="flex justify-center items-center py-8">
                 <div className='h-screen w-screen flex flex-col justify-center items-center gap-8 max-w-7xl'>
-                    <form action="http://localhost:3000/api/events" onSubmit={handleSubmit} className='flex flex-col justify-center items-start gap-8 w-full h-full'>
+                    <form action="/api/events" onSubmit={handleSubmit} className='flex flex-col justify-center items-start gap-8 w-full h-full'>
                         <div className='flex flex-col justify-center items-center gap-2 w-full'>
                             <h2 className='text-5xl font-bold text-gray-500 mb-8'>Event Uploader</h2>
                             <label htmlFor="eventName">Event Name</label>
@@ -78,7 +76,7 @@ const page = () => {
                                 onUpload={(result) => {
                                     setImageId(result.info.public_id)
                                 }}
-                                uploadPreset="kujxblsb"
+                                uploadPreset={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_PRESET}
                                 className='border-2 border-black bg-gray-500 rounded-lg py-2 px-6 text-white'
                                 name='image'
                             />
@@ -93,7 +91,7 @@ const page = () => {
                                         onUpload={(result) => {
                                             setSupportingImage1(result.info.public_id)
                                         }}
-                                        uploadPreset="kujxblsb"
+                                        uploadPreset={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_PRESET}
                                         className='border-2 border-black bg-gray-500 rounded-lg py-2 px-6 text-white'
                                         name='supporting-image-1'
                                     />
@@ -105,7 +103,7 @@ const page = () => {
                                         onUpload={(result) => {
                                             setSupportingImage2(result.info.public_id)
                                         }}
-                                        uploadPreset="kujxblsb"
+                                        uploadPreset={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_PRESET}
                                         className='border-2 border-black bg-gray-500 rounded-lg py-2 px-6 text-white'
                                         name='supporting-image-2'
                                     />
@@ -117,7 +115,7 @@ const page = () => {
                                         onUpload={(result) => {
                                             setSupportingImage3(result.info.public_id)
                                         }}
-                                        uploadPreset="kujxblsb"
+                                        uploadPreset={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_PRESET}
                                         className='border-2 border-black bg-gray-500 rounded-lg py-2 px-6 text-white'
                                         name='supporting-image-3'
                                     />
