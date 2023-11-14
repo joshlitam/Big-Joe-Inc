@@ -3,7 +3,7 @@ import PreviewCard from './PreviewCard'
 import Link from 'next/link'
 
 
-const PreviewSection = async ({ events }) => {
+const PreviewSection = ({ events }) => {
     return (
         <div className='ps w-screen flex flex-col justify-center items-center pt-24 pb-24 bg-white'>
             <h2 className='text-4xl text-red-500 mb-16'>Event Portfolio</h2>
@@ -11,8 +11,7 @@ const PreviewSection = async ({ events }) => {
                 {events.map((event) => (
                     <Link href={{
                         pathname: `portfolio/events/${event._id}`,
-                        query: { id: event._id }
-                    }}>
+                    }}key={event.eventName}>
                         <PreviewCard imageURL={event.primaryImage} eventName={event.eventName} />
                     </Link>
                 ))}

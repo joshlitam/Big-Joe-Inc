@@ -1,25 +1,20 @@
+'use client'
 import PreviewSection from '../components/portfolio/PreviewSection'
+import useSWR from 'swr';
+import Image from 'next/image';
 
-const getEvents = async () => {
-  try {
-    const res = await fetch('http://localhost:3000/api/events', {
-      cache: 'no-store',
-    })
 
-    if (!res.ok) {
-      throw new Error('Failed to fetch events');
-    }
+const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
-    return res.json();
-  } catch (error) {
-    console.log("Error loading events", error);
-  }
-}
+export default function Home() {
+  const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_API_URL}/api/events`, fetcher)
 
-export default async function Home() {
-  const { events } = await getEvents();
+  if (error) return <div className='h-screen w-screen'>failed to load..</div>
+  if (!data) return <div className='h-screen w-screen flex justify-center items-center'><Image src='/img/loading.png' width={200} height={200} alt={"loading"} /></div>
+  const event = data.events
+  console.log(event)
 
   return (
-    <PreviewSection events={events} />
+    <PreviewSection events={event} />
   )
 }

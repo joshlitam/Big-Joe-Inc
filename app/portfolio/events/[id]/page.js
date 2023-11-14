@@ -10,7 +10,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json())
 const page = () => {
     const params = useParams()
     const id = params.id
-    const { data, error } = useSWR(`http://localhost:3000/api/events/${id}`, fetcher)
+    const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_API_URL}/api/events/${id}`, fetcher)
 
     if (error) return <div className='h-screen w-screen'>failed to load..</div>
     if (!data) return <div className='h-screen w-screen flex justify-center items-center'><Image src='/img/loading.png' width={200} height={200} /></div>
