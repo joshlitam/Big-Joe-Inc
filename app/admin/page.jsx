@@ -3,6 +3,7 @@ import React from 'react'
 import Carousel from '../components/Carousel'
 import { CldImage, CldUploadButton } from 'next-cloudinary';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
 const page = () => {
@@ -16,15 +17,45 @@ const page = () => {
     const [tag, setTag] = useState("")
     const [tags, setTags] = useState([])
 
+    const router = useRouter()
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await fetch('http://localhost:3000/api/events', {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json",
+                },
+                body: JSON.stringify({
+                    "eventName": eventTitle,
+                    "description": eventDesc,
+                    "primaryImage": imageId,
+                    "supportingImage": [supportingImage1, supportingImage2, supportingImage3],
+                    "tags": tags
+                })
+            })
+
+            if (res.ok) {
+                router.reload()
+                router.push("/portfolio")
+            } else {
+                throw new Error("failed to create event")
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
         <div>
             <div className="flex justify-center items-center py-8">
                 <div className='h-screen w-screen flex flex-col justify-center items-center gap-8 max-w-7xl'>
-                    <form action="http://localhost:3000/api/events" method="POST" className='flex flex-col justify-center items-start gap-8 w-full h-full'>
+                    <form action="http://localhost:3000/api/events" onSubmit={handleSubmit} className='flex flex-col justify-center items-start gap-8 w-full h-full'>
                         <div className='flex flex-col justify-center items-center gap-2 w-full'>
                             <h2 className='text-5xl font-bold text-gray-500 mb-8'>Event Uploader</h2>
                             <label htmlFor="eventName">Event Name</label>
-                            <input type="text" id='eventName' name='eventName' placeholder='Event Name' onChange={e => setEventTitle(e.target.value)} className='border-2 border-black rounded-lg py-2 px-4' />
+                            <input type="text" id='eventName' name='eventName' placeholder='Event Name' value={eventTitle} onChange={e => setEventTitle(e.target.value)} className='border-2 border-black rounded-lg py-2 px-4' />
                         </div>
                         <div className='flex flex-col justify-center items-center gap-2 w-full'>
                             <label htmlFor="eventDescription">Event Description</label>
@@ -33,7 +64,9 @@ const page = () => {
                                 id='eventDescription'
                                 name='eventDescription'
                                 placeholder='Event Description'
-                                onChange={e => setEventDesc(e.target.value)} className='border-2 border-black rounded-lg py-2 px-4'
+                                onChange={e => setEventDesc(e.target.value)}
+                                value={eventDesc}
+                                className='border-2 border-black rounded-lg py-2 px-4'
                                 rows='5'
                                 cols='40'
                             />

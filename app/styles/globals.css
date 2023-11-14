@@ -135,6 +135,11 @@ html {
     .et-container {
         flex-direction: column;
     }
+
+    .et {
+        width: 80%;
+    }
+
 }
 
 @media only screen and (max-width: 740px) {
@@ -273,12 +278,13 @@ html {
     }
 
     .et-container {
-        gap: 64px;
+        gap: 48px;
     }
 
     .et-text {
-        margin-left: 1rem;
-        margin-right: 1rem;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        gap: 1rem;
     }
 
     .et-text-title {
@@ -291,6 +297,11 @@ html {
 
     .et-text-tags {
         font-size: 1.15rem;
+    }
+
+    .et-image {
+        width: 60px;
+        height: auto;
     }
 
 }
@@ -319,11 +330,5 @@ html {
         display: flex;
         flex-direction: column;
         justify-content: center;
-    }
-}
-
-@media only screen and (max-height: 800px) {
-    .et-wrapper {
-        height: 120vh;
     }
 }

@@ -1,40 +1,24 @@
 'use client'
-import React from 'react'
-import EventDescription from '@/app/components/portfolio/EventDescription'
-import { CldImage } from 'next-cloudinary'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'next/navigation'
+import Event from '@/app/components/portfolio/eventComponents/Event'
+import useSWR from 'swr'
+import Image from 'next/image'
 
-const page = async ({ params }) => {
-    const {id} = params
-    const getEvent = async () => {
-        try {
-            const res = await fetch(`http://localhost:3000/api/events/${id}`)
-            if (!res.ok) {
-                throw new Error('Failewd to fetch event')
-            }
+const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
-            return res.json()
-        } catch (error) {
-            console.log("Error loading event", error)
-        }
-    }
-    const { event } = await getEvent()
+const page = () => {
+    const params = useParams()
+    const id = params.id
+    const { data, error } = useSWR(`http://localhost:3000/api/events/${id}`, fetcher)
+
+    if (error) return <div className='h-screen w-screen'>failed to load..</div>
+    if (!data) return <div className='h-screen w-screen flex justify-center items-center'><Image src='/img/loading.png' width={200} height={200} /></div>
+    const event = data.event
+
     return (
-        <div>
-            <div className='et-wrapper h-screen w-screen flex justify-center items-center'>
-                <div className='et-container flex justify-center items-center max-w-7xl px-6'>
-                    <div className='flex flex-col gap-4'>
-                        <CldImage src={'dw4zjdp8qywsucxsndwj'} width={800} height={700} />
-                        <div className='flex gap-4 justify-center items-center'>
-                            <CldImage src={'dw4zjdp8qywsucxsndwj'} width={100} height={100} />
-                            <CldImage src={'dw4zjdp8qywsucxsndwj'} width={100} height={100} />
-                            <CldImage src={'dw4zjdp8qywsucxsndwj'} width={100} height={100} />
+        <Event image1={event.primaryImage} image2={event.supportingImage[0]} image3={event.supportingImage[1]} image4={event.supportingImage[2]} eventName={event.eventName} description={event.EventDescription} tags={event.tags} />
 
-                        </div>
-                    </div>
-                    <EventDescription eventName={event.eventName} eventDescription={event.EventDescription} tags={event.tags} />
-                </div>
-            </div>
-        </div >
     )
 }
 
