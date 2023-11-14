@@ -35,7 +35,6 @@ const page = () => {
             })
 
             if (res.ok) {
-                router.reload()
                 router.push("/portfolio")
             } else {
                 throw new Error("failed to create event")
@@ -86,7 +85,7 @@ const page = () => {
                             <div className="flex gap-8">
                                 <div className="flex flex-col justify-center items-center gap-4">
                                     <label htmlFor="supporting-image-1">Supporting Image 1</label>
-                                    {supportingImage1 && <CldImage src={supportingImage1} width={120} height={120} />}
+                                    {supportingImage1 && <CldImage src={supportingImage1} width={50} height={50} />}
                                     <CldUploadButton
                                         onUpload={(result) => {
                                             setSupportingImage1(result.info.public_id)
@@ -98,7 +97,7 @@ const page = () => {
                                 </div>
                                 <div className="flex flex-col justify-center items-center gap-4">
                                     <label htmlFor="supporting-image-2">Supporting Image 2</label>
-                                    {supportingImage2 && <CldImage src={supportingImage2} width={120} height={120} />}
+                                    {supportingImage2 && <CldImage src={supportingImage2} width={50} height={50} />}
                                     <CldUploadButton
                                         onUpload={(result) => {
                                             setSupportingImage2(result.info.public_id)
@@ -110,7 +109,7 @@ const page = () => {
                                 </div>
                                 <div className="flex flex-col justify-center items-center gap-4">
                                     <label htmlFor="supporting-image-3">Supporting Image 3</label>
-                                    {supportingImage3 && <CldImage src={supportingImage3} width={120} height={120} />}
+                                    {supportingImage3 && <CldImage src={supportingImage3} width={50} height={50} />}
                                     <CldUploadButton
                                         onUpload={(result) => {
                                             setSupportingImage3(result.info.public_id)
