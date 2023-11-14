@@ -7,7 +7,7 @@ import Image from 'next/image';
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 export default function Home() {
-  const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_API_URL}/api/events`, fetcher)
+  const { data, error } = useSWR(`/api/events`, fetcher)
 
   if (error) return <div className='h-screen w-screen'>failed to load..</div>
   if (!data) return <div className='h-screen w-screen flex justify-center items-center'><Image src='/img/loading.png' width={200} height={200} alt={"loading"} /></div>
