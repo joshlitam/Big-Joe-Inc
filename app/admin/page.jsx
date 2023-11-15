@@ -46,8 +46,8 @@ const page = () => {
 
     return (
         <div>
-            <div className="flex justify-center items-center py-8">
-                <div className='h-screen w-screen flex flex-col justify-center items-center gap-8 max-w-7xl'>
+            <div className="admin h-screen w-screen flex justify-center items-center py-8">
+                <div className='admin h-screen w-screen flex flex-col justify-center items-center gap-8 max-w-7xl'>
                     <form action="/api/events" onSubmit={handleSubmit} className='flex flex-col justify-center items-start gap-8 w-full h-full'>
                         <div className='flex flex-col justify-center items-center gap-2 w-full'>
                             <h2 className='text-5xl font-bold text-gray-500 mb-8'>Event Uploader</h2>
@@ -70,7 +70,7 @@ const page = () => {
                         </div>
                         <div className="flex flex-col justify-center items-center gap-2 w-full">
                             <label htmlFor="image">Event Image</label>
-                            {imageId && <CldImage src={imageId} width={200} height={200} />}
+                            {imageId ? <CldImage src={imageId} width={200} height={200} /> : <div className='bg-gray-500 text-center flex justify-center items-center text-white' style={{width: "200px", height: "150px"}}>Placeholder Image</div>}
                             <CldUploadButton
                                 onUpload={(result) => {
                                     setImageId(result.info.public_id)
@@ -85,7 +85,7 @@ const page = () => {
                             <div className="flex gap-8">
                                 <div className="flex flex-col justify-center items-center gap-4">
                                     <label htmlFor="supporting-image-1">Supporting Image 1</label>
-                                    {supportingImage1 && <CldImage src={supportingImage1} width={50} height={50} />}
+                                    {supportingImage1 ? <CldImage src={supportingImage1} width={200} height={50} /> : <div className='bg-gray-500 text-center flex justify-center items-center text-white' style={{width: "200px", height: "150px"}}>Placeholder Image</div>}
                                     <CldUploadButton
                                         onUpload={(result) => {
                                             setSupportingImage1(result.info.public_id)
@@ -97,7 +97,7 @@ const page = () => {
                                 </div>
                                 <div className="flex flex-col justify-center items-center gap-4">
                                     <label htmlFor="supporting-image-2">Supporting Image 2</label>
-                                    {supportingImage2 && <CldImage src={supportingImage2} width={50} height={50} />}
+                                    {supportingImage2 ? <CldImage src={supportingImage2} width={200} height={50} /> : <div className='bg-gray-500 text-center flex justify-center items-center text-white' style={{width: "200px", height: "150px"}}>Placeholder Image</div>}
                                     <CldUploadButton
                                         onUpload={(result) => {
                                             setSupportingImage2(result.info.public_id)
@@ -109,7 +109,7 @@ const page = () => {
                                 </div>
                                 <div className="flex flex-col justify-center items-center gap-4">
                                     <label htmlFor="supporting-image-3">Supporting Image 3</label>
-                                    {supportingImage3 && <CldImage src={supportingImage3} width={50} height={50} />}
+                                    {supportingImage3 ? <CldImage src={supportingImage3} width={200} height={50} /> : <div className='bg-gray-500 text-center flex justify-center items-center text-white' style={{width: "200px", height: "150px"}}>Placeholder Image</div>}
                                     <CldUploadButton
                                         onUpload={(result) => {
                                             setSupportingImage3(result.info.public_id)
@@ -134,8 +134,9 @@ const page = () => {
                                 value={tag}
                                 onChange={e => setTag(e.target.value)}
                             />
-                            <button className='py-2 px-4 rounded-lg bg-gray-500 text-white' onClick={(e) => {
+                            <button id="submitButton" className='py-2 px-4 rounded-lg bg-gray-500 text-white' onClick={(e) => {
                                 e.preventDefault()
+                                document.getElementById("submitButton").disabled="true"
                                 setTags([...tags, tag])
                                 setTag("")
                             }}>Add Tag</button>

@@ -26,6 +26,10 @@ html {
     border: 2px solid green;
 }
 
+.admin {
+    height: 140vh;
+}
+
 @keyframes mymove {
     0% {
         background-image: url('/img/hero-pattern.jpg');
