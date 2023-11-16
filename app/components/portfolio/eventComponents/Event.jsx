@@ -10,7 +10,7 @@ const Event = ({ image1, image2, image3, image4, eventName, description, tags })
 
     useEffect(() => {
         let int = setInterval(() => {
-            setPage(prev => ((prev + 1) >= 4 ? 1 : prev + 1));
+            setPage(prev => ((prev + 1) >= 5 ? 1 : prev + 1));
         }, 5000)
 
         return () => clearInterval(int)
