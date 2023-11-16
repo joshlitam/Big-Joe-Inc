@@ -138,14 +138,15 @@ const page = () => {
                             />
                             <button id="submitButton" disabled={buttonStatus} className='py-2 px-4 rounded-lg bg-gray-500 text-white' onClick={(e) => {
                                 e.preventDefault()
-                                setButtonStatus(true)
-                                setButtonName("Submitting..")
-                                document.getElementById("submitButton").disabled="true"
+                                
                                 setTags([...tags, tag])
                                 setTag("")
                             }}>{buttonName}</button>
                         </div>
-                        <button type="submit" className='bg-green-500 text-white rounded-lg py-4 px-8 mx-auto' >Submit</button>
+                        <button type="submit" onClick={() => {
+                            setButtonStatus(true)
+                            setButtonName("Submitting..")
+                        }} className='bg-green-500 text-white rounded-lg py-4 px-8 mx-auto' >Submit</button>
                     </form>
                 </div>
             </div>
