@@ -14,6 +14,8 @@ const page = () => {
     const [supportingImage3, setSupportingImage3] = useState("")
     const [tag, setTag] = useState("")
     const [tags, setTags] = useState([])
+    const [buttonStatus, setButtonStatus] = useState(false)
+    const [buttonName, setButtonName] = useState("Add Event")
 
     const router = useRouter()
 
@@ -134,12 +136,14 @@ const page = () => {
                                 value={tag}
                                 onChange={e => setTag(e.target.value)}
                             />
-                            <button id="submitButton" className='py-2 px-4 rounded-lg bg-gray-500 text-white' onClick={(e) => {
+                            <button id="submitButton" disabled={buttonStatus} className='py-2 px-4 rounded-lg bg-gray-500 text-white' onClick={(e) => {
                                 e.preventDefault()
+                                setButtonStatus(true)
+                                setButtonName("Submitting..")
                                 document.getElementById("submitButton").disabled="true"
                                 setTags([...tags, tag])
                                 setTag("")
-                            }}>Add Tag</button>
+                            }}>{buttonName}</button>
                         </div>
                         <button type="submit" className='bg-green-500 text-white rounded-lg py-4 px-8 mx-auto' >Submit</button>
                     </form>
