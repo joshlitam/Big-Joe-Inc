@@ -1,21 +1,20 @@
-import Image from 'next/image'
-import Navbar from '../components/Navbar'
-import Hero from '../components/Hero'
-import AboutUs from '../components/AboutUs'
-import Features from '../components/Features'
-import ContactUs from '../components/ContactUs'
-import Footer from '../components/Footer'
-import Brands from '../components/Brands'
-import Descriptions from '../components/Descriptions'
-import RootLayout from '../layout'
-import Carousel from '../components/Carousel'
-import Portfolio from '../components/portfolio/Portfolio'
+'use client'
 import PreviewSection from '../components/portfolio/PreviewSection'
+import useSWR from 'swr';
+import Image from 'next/image';
+
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 export default function Home() {
+  const { data, error } = useSWR(`/api/events`, fetcher)
+
+  if (error) return <div className='h-screen w-screen'>failed to load..</div>
+  if (!data) return <div className='h-screen w-screen flex justify-center items-center'><Image src='/img/loading.png' width={200} height={200} alt={"loading"} /></div>
+  const event = data.events
+  console.log(event)
+
   return (
-    <RootLayout>
-      <Portfolio />
-    </RootLayout>
+    <PreviewSection events={event} />
   )
 }

@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { useEffect, useRef } from 'react'
 import { motion, useInView, useAnimation } from 'framer-motion'
@@ -25,6 +26,7 @@ const Reveal = ({ children, width = "100%" }) => {
                 initial="hidden"
                 animate={mainControls}
                 transition={{ duration: 0.5, delay: 0.25 }}
+                key="a"
             >
                 {children}
             </motion.div>

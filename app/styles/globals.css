@@ -18,25 +18,44 @@ html {
     background-repeat: no-repeat;
 }
 
-.hero {
-    background-image: url("/img/hero-pattern.jpg");
-    animation-name: mymove;
-    animation-duration: 20s;
-    animation-delay: 3s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    -webkit-animation-timing-function: ease-in-out;
-    min-height: 60vh;
-    background-color: hsl(var(--n) / var(--tw-bg-opacity));
-    --tw-bg-opacity: 0.5;
-}
-
 .mobile-links {
     display: flex;
 }
 
 .selected {
     border: 2px solid green;
+}
+
+.admin {
+    height: 140vh;
+}
+
+.pc-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.et-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.et-image-container {
+    height: 100px;
+    width: 100px;
+}
+
+.et-primary-image-container {
+    height: 400px;
+    width: 600px;
+}
+
+.et-primary-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 @keyframes mymove {
@@ -90,9 +109,11 @@ html {
         gap: 24px;
     }
 
-    .et-image-container {
-        align-items: center;
+    .et-primary-image-container {
+        height: 300px;
+        width: 500px;
     }
+
 }
 
 
@@ -148,6 +169,11 @@ html {
     .et-container {
         flex-direction: column;
     }
+
+    .et {
+        width: 80%;
+    }
+
 }
 
 @media only screen and (max-width: 740px) {
@@ -167,7 +193,7 @@ html {
         flex-direction: column;
         gap: 4px;
     }
-    
+
     .hero-text {
         width: 90%;
     }
@@ -238,7 +264,8 @@ html {
         gap: 5rem;
     }
 
-    .description-left, .description-right {
+    .description-left,
+    .description-right {
         justify-content: center;
     }
 
@@ -286,12 +313,13 @@ html {
     }
 
     .et-container {
-        gap: 64px;
+        gap: 48px;
     }
 
     .et-text {
-        margin-left: 1rem;
-        margin-right: 1rem;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        gap: 1rem;
     }
 
     .et-text-title {
@@ -305,7 +333,23 @@ html {
     .et-text-tags {
         font-size: 1.15rem;
     }
+}
 
+@media only screen and (max-width: 600px) {
+    .pc {
+        height: 200px !important;
+        width: 300px !important;
+    }
+
+    .et-image-container {
+        height: 80px;
+        width: 80px;
+    }
+
+    .et-primary-image-container {
+        width: 400px;
+        height: 250px;
+    }
 }
 
 @media only screen and (max-width: 400px) {
@@ -333,10 +377,14 @@ html {
         flex-direction: column;
         justify-content: center;
     }
-}
 
-@media only screen and (max-height: 800px) {
-    .et-wrapper {
-        height: 120vh;
+    .et-image-container {
+        height: 60px;
+        width: 60px;
+    }
+
+    .et-primary-image-container {
+        width: 300px;
+        height: 200px;
     }
 }
