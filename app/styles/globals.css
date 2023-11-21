@@ -262,6 +262,7 @@ html {
 
     .description-item {
         gap: 5rem;
+        flex-direction: column;
     }
 
     .description-left,
