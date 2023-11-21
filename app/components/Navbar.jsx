@@ -11,11 +11,11 @@ const Navbar = (props) => {
                     <a href="/" className="btn btn-ghost normal-case text-xl">Big Joe Inc</a>
                 </div>
                 <div className="flex justify-around gap-3">
-                    <div className="contact-nav"><a href="/#contact-us">Contact Us</a></div>
+                    <div className="btn btn-ghost contact-nav"><a href="/#contact-us">Contact Us</a></div>
                     <div>
                         <ul className='flex gap-3 mobile-links'>
-                            <li><a href="/portfolio">Portfolio</a></li>
-                            <li><a href="/#about-us">About</a></li>
+                            <li className='btn btn-ghost'><a href="/portfolio">Portfolio</a></li>
+                            <li className='btn btn-ghost'><a href="/#about-us">About</a></li>
                         </ul>
                     </div>
                 </div>
