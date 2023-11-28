@@ -10,7 +10,7 @@ export async function PUT(request, { params }) {
     return NextResponse.json({ message: "Event Updated" }, { status: 200 })
 }
 
-export async function GET(reqest, { params }) {
+export async function GET(request, { params }) {
     const { id } = params;
     await connectMongoDB();
     const event = await Event.findOne({ _id: id })

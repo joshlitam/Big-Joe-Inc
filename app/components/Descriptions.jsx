@@ -1,8 +1,5 @@
 'use client'
 import React from 'react'
-import CountUp from 'react-countup'
-import Reveal from './Reveal'
-import Typer from './Typer'
 import Description from './Description'
 
 const Descriptions = () => {
