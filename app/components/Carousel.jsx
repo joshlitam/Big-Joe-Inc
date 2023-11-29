@@ -21,7 +21,6 @@ const Carousel = () => {
   return (
     <div className='relative flex h-screen w-full flex-col justify-center items-center'>
       <div className="absolute w-full h-full">
-        <Navbar />
         {items.map((item) => (
           <Image src={items[page - 1].imageURL} fill style={{"objectFit": "cover"}} key={item.eventName} alt={item.eventName} />
         ))}

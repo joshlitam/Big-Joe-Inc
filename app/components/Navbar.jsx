@@ -5,7 +5,7 @@ import Link from 'next/link'
 const Navbar = (props) => {
 
     return (
-        <div className='w-full flex justify-center navbar-wrapper absolute p-4 z-10 text-white' style={{}}>
+        <div className='w-full flex justify-center navbar-wrapper p-4 z-10 bg-gray-500 text-white' style={{}}>
             <div className="navbar justify-between max-w-7xl">
                 <div>
                     <a href="/" className="btn btn-ghost normal-case text-xl">Big Joe Inc</a>
