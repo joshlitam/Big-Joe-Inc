@@ -17,9 +17,10 @@ const page = () => {
     if (error) return <div className='h-screen w-screen'>failed to load..</div>
     if (!data) return <div className='h-screen w-screen flex justify-center items-center'><Image src='/img/loading.png' width={200} height={200} /></div>
     const event = data.event
+    const pictures = [event.primaryImage, event.supportingImage[0], event.supportingImage[1], event.supportingImage[2]]
 
     return (
-        <AdminEvent image1={event.primaryImage} image2={event.supportingImage[0]} image3={event.supportingImage[1]} image4={event.supportingImage[2]} eventName={event.eventName} description={event.description} tags={event.tags} />
+        <AdminEvent pictures={pictures} eventName={event.eventName} description={event.description} tags={event.tags} />
     )
 }
 
