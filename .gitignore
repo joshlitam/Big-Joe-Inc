@@ -36,3 +36,5 @@ yarn-error.log*
 next-env.d.ts
 
 # admin stuff
+/app/admin
+/app/components/admin
