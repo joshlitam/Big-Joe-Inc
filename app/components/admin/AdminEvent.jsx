@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import EventDescription from '../portfolio/EventDescription'
 import { CldImage } from 'next-cloudinary'
 import { useEffect, useState } from 'react'
 import AdminEventDescription from './AdminEventDescription'
