@@ -4,13 +4,13 @@ import { NextResponse } from "next/server";
 
 export async function PUT(request, { params }) {
     const { id } = params;
-    const { eventTitle, description, primaryImage, supportingImage, tags } = await request.json();
+    const { eventName, description, primaryImage, supportingImage, tags } = await request.json();
     await connectMongoDB();
     await Event.findByIdAndUpdate(id, { eventName, description, primaryImage, supportingImage, tags })
     return NextResponse.json({ message: "Event Updated" }, { status: 200 })
 }
 
-export async function GET(reqest, { params }) {
+export async function GET(request, { params }) {
     const { id } = params;
     await connectMongoDB();
     const event = await Event.findOne({ _id: id })

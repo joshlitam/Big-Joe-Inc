@@ -16,8 +16,8 @@ export async function GET(request) {
 }
 
 export async function DELETE(request) {
-    const id = request.nextUrl.searchParams.get('id');
+    const { id } = await request.json()
     await connectMongoDB();
-    await Event.findByIdAndDelete(id);
+    await Event.findByIdAndDelete(id.id);
     return NextResponse.json({ message: "Event Deleted" }, { status: 200 })
 }
